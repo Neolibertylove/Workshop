@@ -1,3 +1,16 @@
+Table of contents
+=================
+
+<!--ts-->
+   * [Working with Git](#Working-with-Git)
+      * [Create an organization](#Create-an-organization)
+      * [Clone the repo to your computer](#Clone-the-repo-to-your-computer)
+      * [Work with the code](#Work-with-the-code)
+   * [Working with ARM Templates](#Working-with-ARM-Templates)
+      * [Deploy Storage Account](#Deploy-Storage-Account)
+      * [Deploy VM](#Deploy-VM)
+<!--te-->
+
 # Working with Git
 
 ## Create an organization
