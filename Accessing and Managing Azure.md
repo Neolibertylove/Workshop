@@ -1,3 +1,5 @@
+# Working with Git
+
 ## Create an organization
 
 1.  Go to [Azure
@@ -104,3 +106,79 @@ https://dev.azure.com/\<OrganizationName\>/\<ProjectName\>/\_git/\<RepoName\>
 and select the History tab to see the commit history.
 
 ![](./media/image15.png)
+
+# Working with ARM Templates
+
+Go to <https://github.com/TeamCTGlobal/Workshop> and download the
+repository as a ZIP file and extract it. Copy the content from the
+folder “ARM Templates” to your own repository locally, it should look
+like this:
+
+![](./media/image16.png)
+
+## Deploy Storage Account
+
+Open the file 2\_StorageAccount.json in VSCode and set the storageSku
+variable value to *Standard\_LRS*, this will set the storage account SKU
+to Local Redudant Storage.
+
+To deploy the storage account template open Deploy-Demo.ps1 in VSCode.
+
+1.  Run *Login-AzureRmAccount* to login to your Azure Account. Notice
+    that the login window might appear in the background.
+
+2.  Run *Get-AzureRmContext* to validate that you are targeting the
+    right subscription.
+
+3.  If your need to change subscription run, *Get-AzureRmSubscription |
+    Out-GridView -PassThru | Select-AzureRmSubscription* and select the
+    right subscription.
+
+4.  Run *New-AzureRmResourceGroup* to create a resource group for the
+    storage account. Set the desired name and location.
+
+5.  To deploy the ARM template run *New-AzureRmResourceGroupDeployment*
+    and specify the StorageAccountPrefix, ResourceGroupName and
+    TemplateFile properties as needed.
+
+6.  Login to <https://portal.azure.com> and browse to Resource Groups
+    and select your newly create Resource Group, and validate that you
+    have create a new Local Redundant Storage account with desired
+    prefix.
+    
+    ![](./media/image17.png)
+
+7.  If time, try to change the storageSku variable to Standard\_GRS and
+    deploy the template again using
+    *New-AzureRmResourceGroupDeployment.* You should now see that the
+    storage account has changed to Geo-redundant storage.
+
+## Deploy VM
+
+Open the file *.\\simple-Windows-VM\\azuredeploy.json* in VSCode and
+remove all DS-series sizes as allowed values for the parameter *vmSize,*
+and adjust the variable nicName to concatenate the value from parameter
+*vmName* with *‘-nic’* so the network interface resource name will be
+*‘vmname-nic’*.  
+Open the file *.\\simple-Windows-VM\\azuredeploy.parameters.json* and
+set the desired *vmName*, the *windowsOSVersion* to 2016-Datacenter and
+the *vmSize* to an allowed value.
+
+1.  Run *New-AzureRmResourceGroup* to create a resource group for the VM
+    template deployment. Set the desired name and location.
+
+2.  To deploy the ARM template use *New-AzureRmResourceGroupDeployment*
+    and specify the ResourceGroupName, TemplateFile and
+    TemplateParameterFile properties as needed. When running the cmdlet
+    you will be prompted for entering the desired password for the VM.
+
+3.  Login to <https://portal.azure.com> and browse to Resource Groups
+    and select your simple vm Resource Group, and validate that you
+    deployed the resources showed below, with the correct naming, vm
+    size and OS.
+    
+    ![](./media/image18.png)
+
+4.  If time left, try to add a DNS name to the public IP with
+    inspiration from line 76-78 in the following template
+    <https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-simple-windows/azuredeploy.json>

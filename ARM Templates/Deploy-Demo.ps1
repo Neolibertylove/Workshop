@@ -1,5 +1,5 @@
 #Login to Azure Resource Manager
-Login-AzureRM
+Login-AzureRmAccount
 
 ############# Task 1 ###############
 
@@ -7,8 +7,10 @@ Login-AzureRM
 New-AzureRmResourceGroup -Name "StorageAccount-tst" -Location "WestEurope"
 
 #Deploy Storage Account
-New-AzureRmResourceGroupDeployment -Name "deployStorage-$(Get-Date -Format 'yyyMMddhhmmss')" -ResourceGroupName 'StorageAccount-tst' -TemplateFile .\2_StorageAccount.json `
--StorageAccountPrefix "storDemo"
+New-AzureRmResourceGroupDeployment -StorageAccountPrefix "#StoragePrefix#" -Name "deployStorage-$(Get-Date -Format 'yyyMMddhhmmss')" `
+    -ResourceGroupName 'StorageAccount-tst' -TemplateFile .\2_StorageAccount.json
+
+
 
 
 
