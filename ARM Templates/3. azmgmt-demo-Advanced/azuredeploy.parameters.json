@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "azMgmtPrefix": {
+            "value": "armDemoMgmt"
+        },
+        "instanceCount": {
+            "value": 2
+        },
+        "vmNamePrefix": {
+            "value": "armDemo"
+        },
+        "platform": {
+            "value": "WinSrv"
+        },
+        "username": {
+            "value": "localAdmin"
+        },
+        "pwdOrSsh": {
+            "value": "Passw0rd123!"
+        },
+        "deployVMs": {
+            "value": true
+        },
+        "vmResourceGroup": {
+            "value": "armDemo-VMs"
+        }
+    }
+}

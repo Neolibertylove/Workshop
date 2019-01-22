@@ -1,0 +1,51 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "omsRecoveryVaultName": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Assign a name for the ASR Recovery Vault"
+            }
+        },
+        "omsRecoveryVaultRegion": {
+            "type": "string",
+            "metadata": {
+                "description": "Specify the region for your Recovery Vault"
+            }
+        }
+    },
+    "variables": {
+        "recoveryStorageAccountName": "[toLower(concat('asr', uniqueString(resourceGroup().id)))]",
+        "recoveryStorageType": "Standard_LRS"
+    },
+    "resources": [
+        {
+            "apiVersion": "2016-06-01",
+            "location": "[parameters('omsRecoveryVaultRegion')]",
+            "name": "[parameters('omsRecoveryVaultName')]",
+            "type": "Microsoft.RecoveryServices/vaults",
+            "comments": "ASR Recovery Vault for OMS",
+            "sku": {
+                "name": "RS0",
+                "tier": "Standard"
+            },
+            "properties": {},
+            "resources": [
+            ]
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[variables('recoveryStorageAccountName')]",
+            "apiVersion": "2016-01-01",
+            "location": "[parameters('omsRecoveryVaultRegion')]",
+            "sku": {
+                "name": "[variables('recoveryStorageType')]"
+            },
+            "kind": "Storage",
+            "properties": {}
+        }
+    ],
+    "outputs": {}
+}
