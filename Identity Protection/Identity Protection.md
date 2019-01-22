@@ -1,14 +1,12 @@
-LAB Azure AD identity
+# LAB Azure AD identity
 
-Scenario
+## Scenario
 
 Contoso has 3 administrators:
 
-Jon Donson – Senior IT staff jd@\<tenantname\>
-
-Melon Usk – Security Information mu@\<tenantname\>
-
-Fred Ubar – Junior IT staff fu@\<tenantname\>
+- Jon Donson – Senior IT staff jd@\<tenantname\>
+- Melon Usk – Security Information mu@\<tenantname\>
+- Fred Ubar – Junior IT staff fu@\<tenantname\>
 
 Contoso’s Cloud Journey had a rough start
 
@@ -28,39 +26,26 @@ They have asked your help to setup Identity Protection.
 
 Consider:
 
-Administrative Tiers
-
-Create a separate Admin account – that does not share the password  
-Privileged Access Workstation? Laptop no 2, Shielded VM, Jumphost?
-
-Multifactor Authentication
-
-Identify the Administrative roles
-
-Enroll Administrators for MFA
-
-Enforce MFA for all Administrative roles
-
-Conditional Access
-
-Protect all users using Conditional Access?
-
-Protect from location? (include or exclude a Named Location)
-
-Protect by Login Risk (Impossible travel, password spray attack etc.)
-
-Administrative Tiers (Bonus reading: https://aka.ms/privsec)
+- Administrative Tiers
+- Create a separate Admin account – that does not share the password, Privileged Access Workstation? Laptop no 2, Shielded VM, Jumphost?
+- Multifactor Authentication
+- Identify the Administrative roles
+- Enroll Administrators for MFA
+- Enforce MFA for all Administrative roles
+- Conditional Access
+- Protect all users using Conditional Access?
+- Protect from location? (include or exclude a Named Location)
+- Protect by Login Risk (Impossible travel, password spray attack etc.)
+- Administrative Tiers (Bonus reading: https://aka.ms/privsec)
 
 Logon to portal.azure.com – with the Admin credential.
 
 Create 3 new “admin accounts” for the administrators (hint: add an
 “underscore” to find it easier.)
 
-Jon Donson – Senior IT staff adminjd@\<tenantname\>
-
-Melon Usk – Security Information adminmu@\<tenantname\>
-
-Fred Ubar – Junior IT staff adminfu@\<tenantname\>
+- Jon Donson – Senior IT staff adminjd@\<tenantname\>
+- Melon Usk – Security Information adminmu@\<tenantname\>
+- Fred Ubar – Junior IT staff adminfu@\<tenantname\>
 
 ![](./media/image1.png)
 
