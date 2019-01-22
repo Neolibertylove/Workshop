@@ -11,7 +11,7 @@
   },
   "variables": {
     "storageAccountName": "[take(concat(toLower(parameters('StorageAccountPrefix')), uniquestring(resourceGroup().id)), 23)]",
-    "storageSku": "Standard_LRS"
+    "storageSku": "WhatSKU?"
   },
   "resources": [
     {

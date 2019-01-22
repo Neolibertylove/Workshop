@@ -6,10 +6,13 @@
       "value": "localAdmin"
     },
     "vmName": {
-      "value": "armDemoMgmt"
+      "value": "armDemoVM01"
     },
     "windowsOSVersion": {
-      "value": "2016-Datacenter"
+      "value": "2012-R2-Datacenter"
+    },
+    "vmSize":{
+      "value": "Standard_DS14_v2"
     }
   }
 }
