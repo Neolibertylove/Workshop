@@ -4,6 +4,7 @@ Table of contents
 <!--ts-->
    * [Working with Git](#Working-with-Git)
       * [Create an organization](#Create-an-organization)
+      * [Create a repo using the web portal](#Create-a-repo-using-the-web-portal)
       * [Clone the repo to your computer](#Clone-the-repo-to-your-computer)
       * [Work with the code](#Work-with-the-code)
    * [Working with ARM Templates](#Working-with-ARM-Templates)
@@ -39,10 +40,9 @@ project](https://docs.microsoft.com/en-us/azure/devops/organizations/projects/cr
 to get started. ![Create your first project screen in Azure
 DevOps](./media/image5.png)
 
-**  
-**
 
-**Create a repo using the web portal**
+
+## Create a repo using the web portal
 
 Navigate to the **Repos** page in your project by browsing to
 https://dev.azure.com/\<your account name, hovering your mouse over the
@@ -52,11 +52,11 @@ if you have accessed it recently.
 
 ![Select project](./media/image6.png)
 
- From the repo drop-down, select **New repository**.
+From the repo drop-down, select **New repository**.
 
 ![Manage repositories](./media/image7.png)
 
- In the **Create a new repository** dialog, verify that Git is the repo
+In the **Create a new repository** dialog, verify that Git is the repo
 type and enter a name for your new repo. You can also choose to add a
 README and create a .gitignore for the type of code you plan to manage
 in the repo. A
@@ -69,21 +69,21 @@ files from your development environment.
 ![Set options for your new repo in the Create a Git repo
 dialog](./media/image8.png)
 
- When you're happy with the repo name and choices, select **Create**.
+When you're happy with the repo name and choices, select **Create**.
 
 ## Clone the repo to your computer
 
- From your web browser, open the team project for your organization in
+From your web browser, open the team project for your organization in
 Azure DevOps and select **Repos** \> **Files**.
 
 ![Repos files](./media/image9.png)
 
- Select **Clone** in the upper-right corner of the **Files** window and
+Select **Clone** in the upper-right corner of the **Files** window and
 copy the clone URL.
 
 ![Retrieve the clone URL](./media/image10.png)
 
- Open Visual Studio Code and press F1 to start the command palette,
+Open Visual Studio Code and press F1 to start the command palette,
 type Git: Clone press enter, paste the URL into the repository URL and
 press enter, and select the folder were you want to store the cloned
 repo.
@@ -115,7 +115,7 @@ and press enter. The commit is now pushed to the remote repo.
 
 To confirm that the commit is pushed to the remote repo in Azure DevOps
 browse to
-https://dev.azure.com/\<OrganizationName\>/\<ProjectName\>/\_git/\<RepoName\>
+https://dev.azure.com/<OrganizationName>/<ProjectName>/_git/<RepoName>
 and select the History tab to see the commit history.
 
 ![](./media/image15.png)
